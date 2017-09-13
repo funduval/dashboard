@@ -3,3 +3,99 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.panel-body{
+
+	text-align: left;
+}
+
+.appTitle{
+
+	margin-top: 14px;
+	font-family: serif;
+	font:times;
+	font-weight: bold;
+	-webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+}
+
+
+
+.btn-primary{
+float:right;
+width:160px;
+
+}
+
+#resultWell{
+
+	margin-top: 15px;
+	text-align: left;
+}
+
+ul{
+
+	list-style: none;
+}
+
+
+
+#search {
+	margin-top: 14px;
+	border-color: grey;
+	border-style: solid;
+	border-width: 4px;
+	background-color: white;
+	
+
+}
+/*#sidebar {
+	margin-top: 14px;
+	border-color: grey;
+	border-style: solid;
+	border-width: 4px;
+	margin-left: 2%;
+	margin-right: 0px;
+
+}*/
+
+#formArea{
+margin-left: 0px;
+
+}
+
+#results {
+	margin-top: 14px;
+
+	border-color: grey;
+	border-style: solid;
+	border-width: 4px;
+	margin-right: 0px;
+	background-color: white;
+	
+
+}
+
+#saved{
+	background-color: white;
+	margin-top: 14px;
+	border-color: grey;
+	border-style: solid;
+	border-width: 4px;
+
+}
+
+.App-header{
+
+/*	background-image: url('./nytimes-headquarters.jpg');*/
+	height:360px;
+	border-bottom: solid grey;
+	border-bottom-width: 4px;
+	
+}
