@@ -33,8 +33,8 @@ state = {
 
     API.search(currQuery)
       .then(res => {
-        this.setState({ food:res.data.hits[0], sugar: res.data.hits[0]})
-        console.log(res.data.hits[0])
+        this.setState({ food:res.data.hits[0].fields.item_name, sugar: res.data.hits[0].fields.nf_sugars})
+        console.log(res.data.hits)
       })
       .catch(err => console.log(err));
   };
@@ -83,7 +83,7 @@ else{
 
 render() { 
 
-    var thisObject = this.state.fields
+    var thisObject = this.state.sugar
   console.log("These are the sugar grams:" + thisObject)
 
 
@@ -92,7 +92,7 @@ return (
 <div className="container">
 
   <div className="row"> 
-              <Form
+  <Form
                 value={this.state.value}
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
@@ -100,13 +100,14 @@ return (
                       /> 
              
   </div>
+              
       
     <div className="row">
     <div className= "col-md-12" id="results">
 
         <Results
-          food={this.state.item_name}
-          sugar={this.state.nf_sugars}
+          food={this.state.food}
+          sugar={this.state.sugar}
            
             />
 

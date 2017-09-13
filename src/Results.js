@@ -13,9 +13,9 @@ const Results = props =>
             }
                 <li>
                     <div className="panel">
-                          <div className="panel-body">
-                          {props.food}<br/><br/>
-                              <div data-value={props.sugar}> </div>
+                          <div className="panel-body" data-value={props.sugar}>
+                          {props.food}<h5> contains </h5>{props.sugar} <h5> grams of sugar </h5><br/><br/>
+               
                               <button 
                               className="btn btn-primary form-control"
                               onClick={props.handleFormSubmit} >
