@@ -16,7 +16,8 @@ const Results = props =>
                  
                       
                           <div className="panel-body" data-value={props.sugar}>
-                          <h5 id="contains">{props.food}...{props.brand}..................{props.sugar}g sugar </h5>
+                          <h5 className="contains">{props.food}...{props.brand}..................{props.sugar}g sugar </h5>
+                
                
                               <button 
                               className="btn btn-primary form-control"
