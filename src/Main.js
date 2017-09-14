@@ -13,7 +13,7 @@ state = {
     sugar:"",
     item:"",
     brand:"",
-    weekly:[]
+    weekly:""
    
   };
 
@@ -27,8 +27,6 @@ state = {
 
     // test query string  ==== https://api.nutritionix.com/v1_1/search/apple?results=0:20&fields=item_name,brand_name,nf_sugars&appId=5234f7f1&appKey=c6da7cb3302759d1e20f3793daa4b711
 
-
-
     const currQuery = this.state.item + "?results=0:20&fields=item_name,brand_name,nf_sugars&appId="
 
 
@@ -38,8 +36,8 @@ state = {
       .then(res => {
         this.setState({ food:res.data.hits[0].fields.item_name, sugar: res.data.hits[0].fields.nf_sugars,brand:res.data.hits[0].fields.brand_name})
   
-  let results=res.data.hits
-  // let brandArray=[]
+  let results=res.data.hits[0].fields
+  // let sugArray=[]
   // let median;
 
   // for (var i = 0; i < 10; i++) {
@@ -48,8 +46,7 @@ state = {
 
   // }
 
-
-        console.log(results);
+        console.log("This is a brand name " + results.brand_name);
        
 
       })
@@ -90,10 +87,11 @@ else{
 }
 
     this.setState({
-    food:[],
-    sugar:[],
+    food:"",
+    sugar:"",
     item:"",
-    previous:""
+    previous:"",
+    brand:""
     });
 
   };

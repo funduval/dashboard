@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css'; 
 import './Main.js'; 
-
 //connect all this to SUBMIT button/page
 const Day = props =>
 
@@ -12,8 +11,7 @@ const Day = props =>
             {//glyphicon glyphicon-folder-open
             }
                 <li>
-                    <div className="well">
-                 
+                    <div className="well">             
                       
                           <div className="panel-body" data-value={props.sugar}>
                           <h5 id="dayTotal">{this.sugar} + {props.sugar}</h5>
@@ -31,6 +29,5 @@ const Day = props =>
             </ul>     
   
     </div>
-  
 
 export default Day;
