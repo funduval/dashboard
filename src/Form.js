@@ -2,10 +2,11 @@ import React from 'react';
 
 const Form = props => 
 
-        <div className="col-md-12"  id="search">
-             <h3>Enter A Search Below</h3>
+      
+             
         
                <div className="form-group">
+               <h3>Enter A Search Below</h3>
                          <label htmlFor="search">Search:</label>
                         <form className="form" >
                                 <input 
@@ -20,7 +21,7 @@ const Form = props =>
                </div>               
 
         
-        </div>               
+                  
    
 
 export default Form;

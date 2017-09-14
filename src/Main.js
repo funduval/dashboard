@@ -3,19 +3,22 @@ import './App.css';
 import Form from './Form.js'
 import Results from './Results.js'
 import Saved from './Saved.js';
+import Average from './Average.js';
 import API from './API.js'
 
 class Main extends Component { 
 
 state = {
-    food:[],
-    sugar:[],
+    food:"",
+    sugar:"",
     item:"",
+    brand:"",
+    weekly:[]
    
   };
 
  componentDidMount() {
-    this.searchFood("&q=politics&begin_date=20170105&end_date=20170828&fl=headline%2C,web_url%2C");
+    this.searchFood();
   }
 
  
@@ -33,8 +36,22 @@ state = {
 
     API.search(currQuery)
       .then(res => {
-        this.setState({ food:res.data.hits[0].fields.item_name, sugar: res.data.hits[0].fields.nf_sugars})
-        console.log(res.data.hits)
+        this.setState({ food:res.data.hits[0].fields.item_name, sugar: res.data.hits[0].fields.nf_sugars,brand:res.data.hits[0].fields.brand_name})
+  
+  let results=res.data.hits
+  // let brandArray=[]
+  // let median;
+
+  // for (var i = 0; i < 10; i++) {
+
+  //   sugArray.push(results[i].fields.nf_sugars)
+
+  // }
+
+
+        console.log(results);
+       
+
       })
       .catch(err => console.log(err));
   };
@@ -75,51 +92,63 @@ else{
     this.setState({
     food:[],
     sugar:[],
-    item:""
+    item:"",
+    previous:""
     });
 
   };
-
 
 render() { 
 
     var thisObject = this.state.sugar
   console.log("These are the sugar grams:" + thisObject)
 
-
 return (
 
 <div className="container">
 
-  <div className="row"> 
-  <Form
-                value={this.state.value}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                item={this.state.item}
-                      /> 
-             
-  </div>
-              
-      
-    <div className="row">
-    <div className= "col-md-12" id="results">
+      <div className="row"> 
+             <div className= "col-md-4" id="form">
 
-        <Results
-          food={this.state.food}
-          sugar={this.state.sugar}
-           
-            />
+                    <Form
+                                  value={this.state.value}
+                                  handleInputChange={this.handleInputChange}
+                                  handleFormSubmit={this.handleFormSubmit}
+                                  item={this.state.item}
+                                        /> 
+              </div>       
 
-    </div>
-    </div>
+              <div className= "col-md-7" id="results">
 
-    <div className="row">              
+                <Results
+                  food={this.state.food}
+                  sugar={this.state.sugar}
+                  brand={this.state.brand}
+                   
+                    />
 
-         <Saved /> 
+              </div>
 
+      </div>
+            
+              <div className="row"> 
+            
+                          <div className= "col-md-4" id="average">
 
-       </div>
+                            <Average
+                              food={this.state.food}
+                              sugar={this.state.sugar}
+                               
+                                />
+
+                          </div>
+              </div>
+
+              <div className="row">             
+
+                <Saved /> 
+
+              </div>
 </div>
  
 ) 
@@ -134,4 +163,3 @@ export { Main as default };
 
 
   
-

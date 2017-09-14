@@ -3,7 +3,7 @@ import './App.css';
 import './Main.js'; 
 
 //connect all this to SUBMIT button/page
-const Results = props =>
+const Day = props =>
 
     <div id="resultWell">
 
@@ -12,11 +12,11 @@ const Results = props =>
             {//glyphicon glyphicon-folder-open
             }
                 <li>
-                    <div className="panel">
+                    <div className="well">
                  
                       
                           <div className="panel-body" data-value={props.sugar}>
-                          <h5 id="contains">{props.food}...{props.brand}..................{props.sugar}g sugar </h5>
+                          <h5 id="dayTotal">{this.sugar} + {props.sugar}</h5>
                
                               <button 
                               className="btn btn-primary form-control"
@@ -33,4 +33,4 @@ const Results = props =>
     </div>
   
 
-export default Results;
+export default Day;
