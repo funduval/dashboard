@@ -29,7 +29,7 @@ app.use(express.static("public"));
 // MongoDB Configuration configuration (Change this URL to your own DB)
 var db = mongoose.connection;
 
-var dbURI = "mongodb://localhost/reacticles"
+var dbURI = "mongodb://localhost/foods"
 mongoose.connect(dbURI, {useMongoClient: true});
 
 
