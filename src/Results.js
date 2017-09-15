@@ -1,37 +1,39 @@
 import React from "react";
 import './App.css'; 
 import './Main.js'; 
-
 //connect all this to SUBMIT button/page
-const Results = props =>
+const Results = ({results, handleFormSubmit}) =>
 
-    <div id="resultWell">
+          <ul className="list-group search-results">
 
-            <ul>
+                      {results.map(result => {
+                        const {
+                          item_name,
+                          brand_name,
+                          nf_sugars
+                        } = result.fields;
 
-            {//glyphicon glyphicon-folder-open
-            }
-                <li>
-                    <div className="panel">
-                 
-                      
-                          <div className="panel-body" data-value={props.sugar}>
-                          <h5 className="contains">{props.food}...{props.brand}..................{props.sugar}g sugar </h5>
-                
-               
-                              <button 
-                              className="btn btn-primary form-control"
-                              id="log"
-                              onClick={props.handleFormSubmit} >
-                              log
-                              </button>       
-                          </div>
-                    </div>
-                </li>
-            
-            </ul>     
-  
-    </div>
+                        return <li key={result._id} className="list-group-item">
+
+                            <h5 className="contains">{item_name} </h5>
+
+                            <button 
+                             className="btn btn-primary form-control"
+                             id="log"
+                             onClick={handleFormSubmit} >
+                             log
+                            </button> 
+                        </li>
+                      }
+                 )}      
+          </ul>     
   
 
 export default Results;
+
+
+// {props.results.map(result =>
+//       <li key={result} className="list-group-item">
+//         <img alt="Dog" src={result} className="img-responsive" />
+//       </li>
+//     )}

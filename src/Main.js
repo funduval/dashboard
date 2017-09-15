@@ -9,11 +9,12 @@ import API from './API.js'
 class Main extends Component { 
 
 state = {
-    food:"",
-    sugar:"",
+    food:[],
+    sugar:[],
     item:"",
-    brand:"",
-    weekly:""
+    brand:[],
+    weekly:[],
+    results:[]
    
   };
 
@@ -21,33 +22,19 @@ state = {
     this.searchFood();
   }
 
- 
-
   searchFood = () => {
 
     // test query string  ==== https://api.nutritionix.com/v1_1/search/apple?results=0:20&fields=item_name,brand_name,nf_sugars&appId=5234f7f1&appKey=c6da7cb3302759d1e20f3793daa4b711
 
     const currQuery = this.state.item + "?results=0:20&fields=item_name,brand_name,nf_sugars&appId="
 
-
     // console.log(currQuery)
 
     API.search(currQuery)
       .then(res => {
-        this.setState({ food:res.data.hits[0].fields.item_name, sugar: res.data.hits[0].fields.nf_sugars,brand:res.data.hits[0].fields.brand_name})
-  
-  let results=res.data.hits[0].fields
-  // let sugArray=[]
-  // let median;
+        this.setState({results: res.data.hits})
 
-  // for (var i = 0; i < 10; i++) {
-
-  //   sugArray.push(results[i].fields.nf_sugars)
-
-  // }
-
-        console.log("This is a brand name " + results.brand_name);
-       
+        console.log("This is results now " + this.results);   
 
       })
       .catch(err => console.log(err));
@@ -87,11 +74,13 @@ else{
 }
 
     this.setState({
-    food:"",
-    sugar:"",
+    food:[],
+    sugar:[],
     item:"",
-    previous:"",
-    brand:""
+    brand:[],
+    weekly:[],
+    results:[]
+   
     });
 
   };
@@ -114,17 +103,18 @@ return (
                                   handleFormSubmit={this.handleFormSubmit}
                                   item={this.state.item}
                                         /> 
-              </div>       
+            </div>       
 
               <div className= "col-md-7" id="results">
+                 <div className="panel">      
+                    <div className="panel-body">  
 
-                <Results
-                  food={this.state.food}
-                  sugar={this.state.sugar}
-                  brand={this.state.brand}
-                   
-                    />
+                    <Results
+                      results={this.state.results}
+                        />
 
+                    </div>
+                  </div>
               </div>
 
       </div>
@@ -134,9 +124,6 @@ return (
                           <div className= "col-md-4" id="average">
 
                             <Average
-                              food={this.state.food}
-                              sugar={this.state.sugar}
-                               
                                 />
 
                           </div>
