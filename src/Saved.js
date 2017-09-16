@@ -8,9 +8,9 @@ render() {
 
 return (
 
-		<div className="col-md-12" id="saved">
+		<div className="well" id="saved">
 
-	              <h3>Saved Foods</h3>
+	              <h3>Sugr Loggr</h3>
 		</div>
 
 ); 

@@ -15,7 +15,7 @@ const Results = ({results, handleFormSubmit}) =>
 
                         return <li key={result._id} className="list-group-item">
 
-                            <h5 className="contains">{item_name} </h5>
+                            <h5 className="contains">{item_name}</h5>
 
                             <button 
                              className="btn btn-primary form-control"
@@ -23,17 +23,11 @@ const Results = ({results, handleFormSubmit}) =>
                              onClick={handleFormSubmit} >
                              log
                             </button> 
+                            <h5>{brand_name}</h5>
+                            <h5>{nf_sugars}g sugar</h5>
                         </li>
                       }
                  )}      
           </ul>     
-  
 
 export default Results;
-
-
-// {props.results.map(result =>
-//       <li key={result} className="list-group-item">
-//         <img alt="Dog" src={result} className="img-responsive" />
-//       </li>
-//     )}
