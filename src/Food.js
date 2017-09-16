@@ -5,15 +5,15 @@ var Schema = mongoose.Schema;
 
 var FoodSchema = new Schema({
 
-  title: {
+  item: {
 
-    type: String,
+    type: String
    
   },
 
   sugar: {
     
-  	type: String,
+  	type: Number
   
   }
 });

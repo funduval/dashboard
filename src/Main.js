@@ -14,7 +14,8 @@ state = {
     item:"",
     brand:[],
     weekly:[],
-    results:[]
+    results:[],
+    log:false
    
   };
 
@@ -28,17 +29,19 @@ state = {
 
     const currQuery = this.state.item + "?results=0:20&fields=item_name,brand_name,nf_sugars&appId="
 
-    // console.log(currQuery)
 
     API.search(currQuery)
       .then(res => {
         this.setState({results: res.data.hits})
-
-        console.log("This is results now " + this.results);   
-
       })
       .catch(err => console.log(err));
   };
+
+  logFood = () => {
+//=======call post route to Mongo==========//
+
+                      API.log()
+  }
 
   handleInputChange = event => {
 
@@ -79,7 +82,29 @@ else{
     item:"",
     brand:[],
     weekly:[],
-    results:[]
+    results:[],
+    log:false
+   
+    });
+
+  };
+
+  handleLog = event => {
+
+    event.preventDefault();
+
+    this.state.log = true
+
+    this.logFood();
+
+    this.setState({
+    food:[],
+    sugar:[],
+    item:"",
+    brand:[],
+    weekly:[],
+    results:[],
+    log:false
    
     });
 
@@ -87,53 +112,58 @@ else{
 
 render() { 
 
-    var thisObject = this.state.sugar
-  console.log("These are the sugar grams:" + thisObject)
-
 return (
 
 <div className="container">
 
-      <div className="row"> 
-             <div className= "col-md-4" id="form">
+                <div className="row"> 
 
-                    <Form
-                                  value={this.state.value}
-                                  handleInputChange={this.handleInputChange}
-                                  handleFormSubmit={this.handleFormSubmit}
-                                  item={this.state.item}
-                                        /> 
-            </div>       
+                       <div className= "col-md-4" id="form">
 
-              <div className= "col-md-7" id="results">
-                 <div className="panel">      
-                    <div className="panel-body">  
+                                           <Form
+                                            value={this.state.value}
+                                            handleInputChange={this.handleInputChange}
+                                            handleFormSubmit={this.handleFormSubmit}
+                                            item={this.state.item}
+                                                  /> 
+                      </div>       
 
-                    <Results
-                      results={this.state.results}
-                        />
+                        <div className= "col-md-6" id="average">
 
-                    </div>
-                  </div>
-              </div>
+                                      <Average
+                                        results={this.state.results}/>
+                        </div>
+           
+                </div>
 
-      </div>
-            
-              <div className="row"> 
-            
-                          <div className= "col-md-4" id="average">
+                <div className="row"> 
 
-                            <Average
-                                />
+                      <div className= "col-md-4" id="resultWell">  
 
-                          </div>
-              </div>
+                                        <div className="panel" id="results">      
+                                            <div className="panel-body">  
 
-              <div className="row">             
+                                            <Results
+                                              results={this.state.results}
+                                                />
 
-                <Saved /> 
+                                            </div>
+                                          </div>  
+                       </div> 
+ 
+                                          <div className= "col-md-6" id="resultWell">  
+                                        
+                                            <Saved 
 
-              </div>
+                                            value={this.state.value}
+                                            handleInputChange={this.handleInputChange}
+                                            handleLog={this.handleLog}
+                                            postResponse={this.postResponse}
+
+                                           /> 
+
+                                          </div>                         
+                </div>
 </div>
  
 ) 

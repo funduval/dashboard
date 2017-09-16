@@ -11,14 +11,14 @@
 .App-header {
   background-color: plum
   ;
-  height: 90px;
+  height: 120px;
   padding: 10px 10px 10px;
   color: white;
   margin-bottom: 10px;
 }
-h2 {
+#titleBar {
 
-  margin-bottom: 10px;
+  margin-bottom: 40px;
  margin-top: 0px;
 }
 
