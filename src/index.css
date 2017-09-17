@@ -1,55 +1,46 @@
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 
-.panel-body{
-
+.panel-body {
 	text-align: left;
 	padding-bottom: 10px;
 }
-#submitter{
-
+#submitter {
 	background-color: lightyellow;
 	font-weight: bold;
 	-webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+	-webkit-text-stroke-color: black;
 }
 
-.appTitle{
-
+.appTitle {
 	margin-top: 14px;
 	font-family: serif;
-	font:times;
+	font: times;
 	font-weight: bold;
 	-webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+	-webkit-text-stroke-color: black;
 }
 
-#log{
-
+#log {
 	height: 35px;
 	width: 35px;
 	text-align: center;
-	background-color:hotpink; 
+	background-color: hotpink;
 	float: right;
 	padding-left: 5px;
-	display:inline;
-
-
+	display: inline;
 }
 
-#resultWell{
-
-	margin-top:15px;
+#resultWell {
+	margin-top: 15px;
 	text-align: left;
 	margin-left: 4px;
 }
 
-ul{
-
+ul {
 	list-style: none;
 }
 
@@ -58,8 +49,7 @@ ul{
 	border-color: grey;
 	border-style: solid;
 	border-width: 4px;
-	background-color: white;	
-
+	background-color: white;
 }
 
 /*#sidebar {
@@ -72,10 +62,8 @@ ul{
 
 }*/
 
-#formArea{
-
-margin-left: 0px;
-
+#formArea {
+	margin-left: 0px;
 }
 
 #form {
@@ -85,35 +73,29 @@ margin-left: 0px;
 	border-width: 4px;
 	margin-right: 0px;
 	background-color: white;
-
 }
 
-#contains{
-
-	display:inline;
-	float:left;
+#contains {
+	display: inline;
+	float: left;
 }
 
 #results {
-
 	margin: -134px 0 0 14px;
 	border-color: grey;
 	border-style: solid;
 	border-width: 4px;
 	background-color: white;
-	
-
 }
 
-h3{
+h3 {
 	color: plum;
 	font-weight: bold;
 	-webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+	-webkit-text-stroke-color: black;
 }
 
-#resultDiv{
-
+#resultDiv {
 	border-color: grey;
 	border-style: solid;
 	border-width: 4px;
@@ -121,34 +103,26 @@ h3{
 }
 
 #average {
-
-	margin: 14px 0 0 0px;	
-
+	margin: 14px 0 0 0px;
 }
 
-#saved{
+#saved {
 	background-color: white;
 	margin-top: 14px;
 	font-weight: bold;
 	-webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
-   color:hotpink;
-   font-size: 30px;
-   padding-top: 0;
-   text-align: center;
-
+	-webkit-text-stroke-color: black;
+	color: hotpink;
+	font-size: 30px;
+	padding-top: 0;
+	text-align: center;
 }
 
-
-
-.App-header{
-
-/*	background-image: url('./nytimes-headquarters.jpg');*/
-	height:360px;
-	border-bottom: solid lightyellow
-	;
-	border-bottom-width:14px;
+.App-header {
+	/*	background-image: url('./nytimes-headquarters.jpg');*/
+	height: 360px;
+	border-bottom: solid lightyellow;
+	border-bottom-width: 14px;
 	text-align: left;
 	padding-bottom: 8px;
-	
 }

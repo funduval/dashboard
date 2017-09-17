@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './sugar-evil.jpg';
 import './App.css';
-import Main from './Main.js'
+import Main from './Main.js';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           <h2 id="titleBar">Sugr Trackr</h2>
         </div>
         <div className="App-intro">
-         <Main /> 
+          <Main />
         </div>
       </div>
     );

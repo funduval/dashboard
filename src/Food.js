@@ -2,20 +2,19 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var FoodSchema = new Schema({
+	item: {
+		type: String
+	},
 
-  item: {
+	sugar: {
+		type: Number
+	}
 
-    type: String
-   
-  },
-
-  sugar: {
-    
-  	type: Number
-  
-  }
+	date: {
+		
+		type:Date
+	}
 });
 
 // Create the Model
